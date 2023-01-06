@@ -113,7 +113,7 @@
 }
 
 function toggleCamera() {
-  if (cameraEnabled) {
+  if (!cameraEnabled) {
     // Stop all tracks on the local stream
     localVideo.srcObject.getTracks().forEach(track => track.stop());
     // Set the button text
