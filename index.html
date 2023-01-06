@@ -104,6 +104,39 @@
 
   </script>
 
+
+<!-- Create the camera toggle button -->
+<button id="camera-toggle-button">Turn Camera Off</button>
+
+<!-- Add JavaScript to handle the camera toggle -->
+<script>
+  const cameraToggleButton = document.getElementById('camera-toggle-button');
+  cameraToggleButton.addEventListener('click', toggleCamera);
+
+  let cameraEnabled = true;
+
+  function toggleCamera() {
+    if (cameraEnabled) {
+      // Stop all tracks on the local stream
+      localVideo.srcObject.getTracks().forEach(track => track.stop());
+      // Set the button text
+      cameraToggleButton.textContent = 'Turn Camera On';
+      cameraEnabled = false;
+    } else {
+      // Get access to the camera and display the video stream on the localVideo element
+      navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+        .then(stream => {
+          localVideo.srcObject = stream;
+          stream.getTracks().forEach(track => peerConnection.addTrack(track, stream));
+        });
+      // Set the button text
+      cameraToggleButton.textContent = 'Turn Camera Off';
+      cameraEnabled = true;
+    }
+  }
+</script>
+
+
   <!-- Create the whiteboard canvas -->
 <canvas id="whiteboard" width="600" height="400"></canvas>
 
