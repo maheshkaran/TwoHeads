@@ -1,0 +1,69 @@
+<!-- Create the layout for the video chat -->
+<div id="video-chat">
+    <div id="local-video-container">
+      <video id="localVideo" autoplay></video>
+    </div>
+    <div id="remote-video-container">
+      <video id="remoteVideo" autoplay></video>
+    </div>
+  </div>
+  
+  <!-- Create a button to start the call -->
+  <button id="start-call-button">Start Call</button>
+  
+  <!-- Create a container for the whiteboard -->
+  <div id="whiteboard-container">
+    <canvas id="whiteboard" width="600" height="400"></canvas>
+  </div>
+  
+  <!-- Style the layout with CSS -->
+  <style>
+    #video-chat {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    #local-video-container, #remote-video-container {
+      width: 50%;
+      height: 100%;
+      position: relative;
+    }
+  
+    #localVideo {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 150px;
+      height: auto;
+      border: 2px solid white;
+      border-radius: 5px;
+      background: black;
+    }
+  
+    #remoteVideo {
+      width: 100%;
+      height: 100%;
+    }
+  
+    #start-call-button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+  
+    #whiteboard-container {
+      display: none;
+    }
+  </style>
+  
+  <!-- Add JavaScript to handle user interactions -->
+  <script>
+    const startCallButton = document.getElementById('start-call-button');
+    startCallButton.addEventListener('click', startCall);
+  
+    function startCall() {
+      // Set up the peer connection and start the call (as described in the previous example)
+    }
+  </script>
+  
