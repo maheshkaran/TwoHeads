@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
 <!-- Create the layout for the video chat -->
 <div id="video-chat">
     <div id="local-video-container">
@@ -6,7 +12,7 @@
     <div id="remote-video-container">
       <video id="remoteVideo" autoplay></video>
     </div>
-  </div>
+</div>
   
   <!-- Create a button to start the call -->
   <button id="start-call-button">Start Call</button>
@@ -15,53 +21,6 @@
   <div id="whiteboard-container">
     <canvas id="whiteboard" width="600" height="400"></canvas>
   </div>
-  
-  <!-- Style the layout with CSS -->
-  <style>
-    #video-chat {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    #local-video-container, #remote-video-container {
-      width: 50%;
-      height: 100%;
-      position: relative;
-    }
-  
-    #localVideo {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      width: 150px;
-      height: auto;
-      border: 2px solid white;
-      border-radius: 5px;
-      background: black;
-    }
-  
-    #remoteVideo {
-      width: 100%;
-      height: 100%;
-    }
-  
-    #start-call-button {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-    }
-  
-    #whiteboard-container {
-      display: none;
-    }
-
-    #whiteboard {
-        border: 2px solid black;
-        border-radius: 5px;
-    }
-
-  </style>
   
   <!-- Add JavaScript to handle user interactions -->
   <script>
@@ -112,27 +71,9 @@
   document.getElementById('whiteboard-container').style.display = 'block';
 }
 
-function toggleCamera() {
-  if (!cameraEnabled) {
-    // Stop all tracks on the local stream
-    localVideo.srcObject.getTracks().forEach(track => track.stop());
-    // Set the button text
-    cameraToggleButton.textContent = 'Turn Camera On';
-    cameraEnabled = false;
-  } else {
-    // Get access to the camera and display the video stream on the localVideo element
-    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-      .then(stream => {
-        localVideo.srcObject = stream;
-        stream.getTracks().forEach(track => peerConnection.addTrack(track, stream));
-      });
-    // Set the button text
-    cameraToggleButton.textContent = 'Turn Camera Off';
-    cameraEnabled = true;
-  }
-}
+</script>
 
-  </script>
+<script src="toggleCamera.js"></script>
 
 
 <!-- Create the camera toggle button -->
@@ -181,4 +122,6 @@ function toggleCamera() {
     });
   }
 </script>
+
+</html>
   
