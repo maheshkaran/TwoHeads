@@ -14,65 +14,27 @@
     </div>
 </div>
   
-  <!-- Create a button to start the call -->
-  <button id="start-call-button">Start Call</button>
-  
-  <!-- Create a container for the whiteboard -->
-  <div id="whiteboard-container">
-    <canvas id="whiteboard" width="600" height="400"></canvas>
-  </div>
-  
-<script src="startCall.js"></script>
+<!-- Create a button to start the call -->
+<button id="start-call-button">Start Call</button>
 
+<!-- Create a container for the whiteboard -->
+<div id="whiteboard-container">
+  <canvas id="whiteboard" width="600" height="400"></canvas>
+</div>
+  
+
+<!-- JavaScript Section-->
+<script src="startCall.js"></script>
 <script src="toggleCamera.js"></script>
+<script src="canvasDrawing.js"></script>
 
 
 <!-- Create the camera toggle button -->
 <button id="camera-toggle-button">Turn Camera Off</button>
 
-<!-- Add JavaScript to handle the camera toggle -->
-<script>
-  
-</script>
-
-
-  <!-- Create the whiteboard canvas -->
+<!-- Create the whiteboard canvas -->
 <canvas id="whiteboard" width="600" height="400"></canvas>
 
-<!-- Set up the canvas context and drawing tools -->
-<script>
-  const canvas = document.getElementById('whiteboard');
-  const context = canvas.getContext('2d');
-  let isDrawing = false;
-
-  canvas.addEventListener('mousedown', () => isDrawing = true);
-  canvas.addEventListener('mouseup', () => isDrawing = false);
-  canvas.addEventListener('mouseout', () => isDrawing = false);
-  canvas.addEventListener('mousemove', draw);
-
-  function draw(event) {
-    if (!isDrawing) return;
-
-    context.lineWidth = 2;
-    context.lineCap = 'round';
-    context.strokeStyle = 'black';
-
-    context.beginPath();
-    context.moveTo(event.offsetX, event.offsetY);
-    context.lineTo(event.offsetX + 1, event.offsetY + 1);
-    context.stroke();
-    context.closePath();
-
-    // Send the drawing data to the other peer using the signaling server
-    sendToServer({
-      type: 'drawing',
-      data: {
-        x: event.offsetX,
-        y: event.offsetY
-      }
-    });
-  }
-</script>
 
 </html>
   
