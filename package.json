@@ -1,0 +1,19 @@
+{
+  "name": "twoheads",
+  "version": "1.0.0",
+  "description": "TwoHeads, a pair investigation platform for learning mathematics",
+  "main": "canvasDrawing.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maheshkaran/TwoHeads.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maheshkaran/TwoHeads/issues"
+  },
+  "homepage": "https://github.com/maheshkaran/TwoHeads#readme"
+}
