@@ -2,7 +2,7 @@
   "name": "twoheads",
   "version": "1.0.0",
   "description": "TwoHeads, a pair investigation platform for learning mathematics",
-  "main": "startCall.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/maheshkaran/TwoHeads/issues"
   },
-  "homepage": "https://github.com/maheshkaran/TwoHeads#readme",
+  "homepage": "https://github.com/maheshkaran/TwoHeads",
   "dependencies": {
     "ejs": "^3.1.8",
     "epxress": "^0.0.1-security",
