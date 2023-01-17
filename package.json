@@ -4,9 +4,11 @@
   "description": "TwoHeads, a pair investigation platform for learning mathematics",
   "main": "index.js",
   "scripts": {
+    "build": "node index.js build",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
