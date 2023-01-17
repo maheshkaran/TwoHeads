@@ -15,7 +15,8 @@
   "bugs": {
     "url": "https://github.com/maheshkaran/TwoHeads/issues"
   },
-  "homepage": "https://github.com/maheshkaran/TwoHeads",
+  "homepage": "https://maheshkaran.github.io/TwoHeads/",
+  //"homepage": "https://github.com/maheshkaran/TwoHeads",
   "dependencies": {
     "ejs": "^3.1.8",
     "epxress": "^0.0.1-security",
